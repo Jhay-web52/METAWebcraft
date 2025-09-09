@@ -181,7 +181,7 @@ document.querySelectorAll(".like-btn").forEach((button) => {
 function createStars() {
   const sky = document.getElementById("sky");
   if (!sky) return; // Guard if element is missing
-  const starCount = 30;
+  const starCount = 80; // increase stars for richer background
 
   for (let i = 0; i < starCount; i++) {
     const star = document.createElement("div");
@@ -190,13 +190,13 @@ function createStars() {
     // Random properties for each star
     const size = Math.random() * 3 + 1;
     const posX = Math.random() * 100;
-    const delay = Math.random() * 15;
-    const duration = Math.random() * 5 + 5;
+    const delay = -Math.random() * 6; // negative delay so animation is visible immediately
+    const duration = Math.random() * 3 + 3; // faster overall speed (3-6s)
 
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.left = `${posX}%`;
-    star.style.top = `${Math.random() * 20 - 10}%`;
+    star.style.top = `${Math.random() * 20 - 20}%`; // start slightly above viewport
     star.style.animationDelay = `${delay}s`;
     star.style.animationDuration = `${duration}s`;
 
